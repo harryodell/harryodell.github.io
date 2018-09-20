@@ -2,6 +2,23 @@
 
 I'm Harry. I'm a PhD candidate on the [Data Analytics and Society CDT program](https://datacdt.org/).
 
+
+## Research interests 
+
+I like this and this.
+
+For more information, have a look at my [research projects](projects.md).
+
+
+
+
+
+
+
+
+
+
+
 You can use the [editor on GitHub](https://github.com/harryodell/harryodell.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
