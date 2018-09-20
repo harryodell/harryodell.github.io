@@ -1,4 +1,6 @@
-## Welcome to GitHub Pages
+## About me
+
+I'm Harry. I'm a PhD candidate on the [Data Analytics and Society CDT program](https://datacdt.org/).
 
 You can use the [editor on GitHub](https://github.com/harryodell/harryodell.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
 
