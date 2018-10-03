@@ -1,5 +1,9 @@
 # Programming for Social Sciences
 
+<pre><code>
+    import random
+    import math
+</code></pre>
 
 ```python
 import random
