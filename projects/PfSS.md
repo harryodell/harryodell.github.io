@@ -1,6 +1,6 @@
 # Programming for Social Sciences
 
-<pre><code>
+<pre><code class="python">
     import random
     import math
 </code></pre>
