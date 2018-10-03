@@ -38,13 +38,13 @@ footer {
 }
 
 ul.posts { 
-    padding-top: 0px;
     margin: 20px auto 40px; 
     font-size: 1.5em;
     margin-top: 5px;
 }
 
 ul.posts li {
+    padding-top: 0px;
     list-style: none;
     margin-top: 5px;
 }
