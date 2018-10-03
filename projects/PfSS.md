@@ -1,5 +1,9 @@
 # Programming for Social Sciences
 
+<link rel="stylesheet" href="solarized-dark.css">
+<script src="highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
 <pre><code class="python">
     import random
     import math
