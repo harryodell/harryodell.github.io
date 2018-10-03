@@ -47,21 +47,34 @@ p + ul {
     margin-top: -10px;
 }    
 
+@import "https://cdn.rawgit.com/google/code-prettify/master/styles/desert.css";
+$lightGray: #fafafa;
+$medBlue: #9baecf;
+$char: #292929;
+
+code,
+.code,
 pre {
-    background: #f4f4f4;
-    border: 1px solid #ddd;
-    border-left: 3px solid #f36d33;
-    color: #666;
-    page-break-inside: avoid;
-    font-family:     "Courier New"
-                      Courier
-                      monospace;
-    font-size: 15px;
-    line-height: 1.6;
-    margin-bottom: 1.6em;
-    max-width: 100%;
-    overflow: auto;
-    padding: 0.5em 1.5em;
+  font-family: 'Source Code Pro';
+  background: $char;
+  color: $lightGray;
+  font-size: 16px;
+  padding: 0;
+  padding: 10px;
+  &:before {
     display: block;
-    word-wrap: break-word;
+    width: calc(100%);
+    margin-left: -3px;
+    margin-top: -3px;
+    padding: 3px;
+    text-transform: uppercase;
+    content: attr(data-lang);
+    background: $medBlue;
+  }
+  .o {
+    color: orange;
+  }
+  .w {
+    color: white;
+  }
 }
