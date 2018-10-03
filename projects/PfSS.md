@@ -1,6 +1,6 @@
 ## Programming for Social Sciences
 
-```
+```python
 import random
 import math
 
