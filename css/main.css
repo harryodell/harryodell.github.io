@@ -57,7 +57,8 @@ pre {
     line-height: 1.6;
     max-width: 100%;
     overflow: auto;
-    padding: 0.5em 0.5em;
+    padding-top: 0em;
+    padding-bottom: 0em;
     display: block;
     word-wrap: break-word;
 }
