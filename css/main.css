@@ -22,7 +22,9 @@ a:hover {
 h1 {
     font-size: 3em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
-    line-height: 0.5em;
+}
+h2 {
+    margin-bottom: 0.px;
 }
 p {
     font-size: 1.1em;
