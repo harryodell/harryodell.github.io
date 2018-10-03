@@ -44,8 +44,8 @@ ul.posts {
 }
 
 ul.posts li {
-    padding-top: 0px;
-    padding-bottom: 0px;
+    padding: 0.2em;
+    margin: 0;
     list-style: none;
     margin-top: 5px;
 }
