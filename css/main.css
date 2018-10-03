@@ -46,8 +46,3 @@ ul.posts li {
 p + ul {
     margin-top: -10px;
 }
-
-<link rel="stylesheet" href="solarized-dark.css">
-<script src="highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-
