@@ -1,5 +1,22 @@
 ## Programming for Social Sciences
 
+
+<pre class="brush: python">
+import random
+import math
+
+class Agent:    
+    def __init__(self, environment, agents, neighbourhood, colours):
+        self.agents = agents
+        self.environment = environment        
+        self.y = random.randint(0, len(self.environment[1]))        
+        self.x = random.randint(0, len(self.environment))
+        self.store = 0 
+        self.neighbourhood = neighbourhood
+        self.colours = random.choice(colours)
+</pre>
+
+
 ```python
 import random
 import math
