@@ -1,86 +1,59 @@
 # Programming for Social Sciences
 
+## Motivation
 
-<pre><code class="python">import random
-import math
+The motivation behind this project was to fulfil the requirements for assessment 1 of the [GEOG5995 Programming for Social Scientists: Core Skills [Python] course](http://www.geog.leeds.ac.uk/courses/computing/study/core-python-phd/ "GEOG5995") at Leeds University. This is a one-week intensive course aimed at social scientists that want to learn how to program in Python. The course teaches basic Python along with useful elements and conventions within the core programming culture. 
 
-class Agent:    
-    def __init__(self, environment, agents, neighbourhood, colours):
-        self.agents = agents
-        self.environment = environment        
-        self.y = random.randint(0, len(self.environment[1]))        
-        self.x = random.randint(0, len(self.environment))
-        self.store = 0 
-        self.neighbourhood = neighbourhood
-        self.colours = random.choice(colours)
+For this assignment, it was required that we build a simple ABM, following on from an example provided in the course practicals. Additional and original contributions have been added including:
 
+* The introduction of wolves to the model
+* The addition of an infant class that inherits an Agents behaviour
+* Providing the user with system arguments to initialize model parameters
+* Inclusion of stopping conditions
+* Removal of agents list as a constructor method to increase model efficiency
 
-    def __str__(self):        
-        return str(self.y) + ',' + str(self.x) + ',' + str(self.store) + ',' + str(self.colours)
-        
+Some key snippets of code are included below.
+
+Creating the infant class:
+<pre><code class="python">
+class Infant(Agent):
+    """
+    Infant class inherits behaviour from Agent class
+    """
     
-    def move(self):
-        if random.random() < 0.5:
-            self.x = (self.x + 1) % len(self.environment)
-        else:
-            self.x = (self.x - 1) % len(self.environment)
-
-        if random.random() < 0.5:
-            self.y = (self.y + 1) % len(self.environment[1])
-        else:
-            self.y = (self.y - 1) % len(self.environment[1])        
-
-
-    def eat(self):
-        if self.environment[self.y][self.x] > 10:
-            self.environment[self.y][self.x] -= 10
-            self.store += 10
-        else:
-            self.store += self.environment[self.y][self.x]
-            self.environment[self.y][self.x] = 0    
-            
-            
-    def sick(self):
-        if self.store > 100:
-            self.environment[self.y][self.x] += self.store
-            self.store = 0
-    
-    
-    def distance_between(self, other):
-        return math.sqrt((self.x - other.x)**2 + (self.y - other.y)**2)
-
-    
-    def share_with_neighbours(self, neighbourhood):
-        #i = 0
-        for agent in self.agents:
-            #i += 1
-            if agent != self:
-                distance = self.distance_between(agent) 
-                #if distance <= self.neighbourhood:
-                if distance <= neighbourhood:
-                    average = (self.store + agent.store)/2
-                    self.store = average
-                    agent.store = average
-                    #print("sharing " + str(distance) + " " + str(average))
-                    
-                    #print(f"{str(self)} sharing with {str(agent)}: dist = {str(distance)}, ave = {str(average)}")
-                    print(f"Agent ({self}) sharing with Agent ({agent}): dist = {str(distance)}, ave = {str(average)}")
-                    print("\n")
-
-
-    @property
-    def x(self):
-        return self._x
-    
-    @property
-    def y(self):
-        return self._y
-    
-    @x.setter
-    def x(self, value):
-        self._x = value 
-        
-    @y.setter 
-    def y(self, value):
-        self._y = value
+    def __init__(self, environment, neighbourhood):
+        super().__init__(environment, neighbourhood)
 </code></pre>
+
+
+Function for wolf to eat sheep:
+<pre><code class="python">
+def eat_agents(self, neighbourhood, wolves, agents):
+    for _wolf in wolves:
+        for agent in agents:
+            distance = self.distance_between(agent) 
+            if distance <= neighbourhood:
+                # wolf aquires agents store and removes agent
+                self.store += agent.store
+                agents.remove(agent)
+</code></pre>
+
+
+The three stopping conditions:
+<pre><code class="python">
+if sum(sum(x) for x in environment) < env_total*0.7:
+    carry_on = False
+    print("Stopping condition met - Environment depleted by %70")
+
+if len(agents) == 0:
+    carry_on = False
+    print("Stopping condition met - no sheep left!")
+
+if counter == (num_of_iterations):
+    carry_on = False
+    print("Stopping condition met - number of iterations reached")
+else:
+    counter += 1
+</code></pre>
+
+For further information and access to the github repository containing the relevant code, please [click here](https://github.com/harryodell/PfSS)
